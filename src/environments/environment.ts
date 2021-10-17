@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDtbIcSAwGteuRxCOh8QywWml1Wqqlp7ug',
-    authDomain: 'vetsystem-25a2e.firebaseapp.com',
-    projectId: 'vetsystem-25a2e',
-    storageBucket: 'vetsystem-25a2e.appspot.com',
-    messagingSenderId: '1036654020786',
-    appId: '1:1036654020786:web:e5a5521a3233c625ef61ab',
-    measurementId: 'G-MSNPYY5XGC'
+    apiKey: 'AIzaSyDlNbr2i44Zgur7t_D37aKT4d0bJvutGn0',
+    authDomain: 'vetsystem-a2fb1.firebaseapp.com',
+    projectId: 'vetsystem-a2fb1',
+    storageBucket: 'vetsystem-a2fb1.appspot.com',
+    messagingSenderId: '994315090492',
+    appId: '1:994315090492:web:0b7ed7f95766936a3aa139',
+    measurementId: 'G-KB5ENTF790'
   },
 };
 

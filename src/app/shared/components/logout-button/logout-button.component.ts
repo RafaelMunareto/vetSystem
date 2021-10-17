@@ -9,7 +9,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { OverlayService } from '../../../core/services/overlay.service';
 import { Store } from '@ngrx/store';
-import { CompletoModel } from 'src/app/core/ngrx/models/completo.model';
 
 @Component({
   selector: 'app-logout-button',
@@ -24,7 +23,6 @@ export class LogoutButtonComponent implements OnInit {
     private navCtrl: NavController,
     private menuCtrl: MenuController,
     private overlayService: OverlayService,
-    private store: Store<CompletoModel>
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -43,9 +41,6 @@ export class LogoutButtonComponent implements OnInit {
             await this.authService.logout();
             this.navCtrl.navigateRoot('/login');
             this.menuCtrl.enable(false, this.menu);
-            this.store.dispatch(ClearEtiquetas());
-            this.store.dispatch(ClearResponsavel());
-            this.store.dispatch(ClearTasks());
           },
         },
         'NÃO',

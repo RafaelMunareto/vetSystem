@@ -3,7 +3,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { SegmentButtonModule } from './segment-button/segment-button.module';
 import { EtiquetaItemModule } from './etiqueta-item/etiqueta-item.module';
-import { TaskItemModule } from './task-item/task-item.module';
 import { MenuToggleModule } from './menu-toggle/menu-toggle.module';
 import { ValidatorNoteModule } from './validator-note/validator-note.module';
 import { LogoutButtonModule } from './logout-button/logout-button.module';
@@ -17,7 +16,6 @@ import { ExpandableModule } from './expandable/expandable.module';
 
 @NgModule({
   imports: [
-    TaskItemModule,
     MenuToggleModule,
     LogoutButtonModule,
     ValidatorNoteModule,
@@ -33,7 +31,6 @@ import { ExpandableModule } from './expandable/expandable.module';
     ExpandableModule
   ],
   exports: [
-    TaskItemModule,
     MenuToggleModule,
     LogoutButtonModule,
     ValidatorNoteModule,
