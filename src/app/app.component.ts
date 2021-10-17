@@ -23,35 +23,11 @@ export class AppComponent {
 
     this.pages = [
       {
-        url: '/tasks',
+        url: '/home',
         icon: 'home-outline',
         direction: 'back',
         text: 'Home',
-      },
-      {
-        url: '/responsaveis',
-        icon: 'man-outline',
-        direction: 'forward',
-        text: 'Responsáveis',
-      },
-      {
-        url: '/etiquetas/create',
-        icon: 'add-circle-outline',
-        direction: 'forward',
-        text: 'Nova Etiqueta',
-      },
-      {
-        url: '/responsaveis/create',
-        icon: 'add-circle-outline',
-        direction: 'forward',
-        text: 'Novo Responsável',
-      },
-      {
-        url: '/tasks/create',
-        icon: 'add',
-        direction: 'forward',
-        text: 'Nova Tarefa',
-      },
+      }
     ];
   }
 

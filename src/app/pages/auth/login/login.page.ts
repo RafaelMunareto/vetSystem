@@ -104,7 +104,7 @@ export class LoginPage implements OnInit {
         provider,
       });
       this.navCtrl.navigateForward(
-        this.activeRoute.snapshot.queryParamMap.get('redirect') || '/tasks'
+        this.activeRoute.snapshot.queryParamMap.get('redirect') || '/home'
       );
     } catch (e) {
       await this.overlayService.toast({
@@ -120,13 +120,13 @@ export class LoginPage implements OnInit {
     NativeBiometric.setCredentials({
       username: this.authForm.get('email').value,
       password:  this.authForm.get('password').value,
-      server: 'http://www.munatasks.com',
+      server: 'http://www.vetsystem.com',
     }).then().finally( () => this.digitalChange = true);
   }
 
   deleteCredential() {
     NativeBiometric.deleteCredentials({
-      server: 'http://www.munatasks.com',
+      server: 'http://www.vetsystem.com',
     }).then(()=> {
       this.overlayService.toast({
         message: 'Login e senha deletados!',
@@ -142,13 +142,13 @@ export class LoginPage implements OnInit {
       if (isAvailable || isFaceId) {
 
         NativeBiometric.getCredentials({
-          server: 'http://www.munatasks.com',
+          server: 'http://www.vetsystem.com',
         }).then((credentials) => {
 
             NativeBiometric.verifyIdentity({
               reason: 'Para facilitar o login',
               title: 'Log in',
-              subtitle: 'MunaTasks',
+              subtitle: 'vetsystem',
               description: 'Acesso via digital.',
             }).then(() => {
               this.authService.authenticate({
@@ -158,7 +158,7 @@ export class LoginPage implements OnInit {
               }).then(
                 () => {
                   this.navCtrl.navigateForward(
-                    this.activeRoute.snapshot.queryParamMap.get('redirect') || '/tasks'
+                    this.activeRoute.snapshot.queryParamMap.get('redirect') || '/home'
                   );
                 }
               );

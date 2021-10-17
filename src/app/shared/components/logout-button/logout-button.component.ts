@@ -1,8 +1,4 @@
-import {
-  ClearEtiquetas,
-  ClearResponsavel,
-  ClearTasks,
-} from './../../../core/ngrx/actions/action-types';
+
 import { MenuController, NavController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 

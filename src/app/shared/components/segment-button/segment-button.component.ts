@@ -9,10 +9,6 @@ import {
 import { select, Store } from '@ngrx/store';
 import { filter, take } from 'rxjs/operators';
 
-import {
-  AddSelectionFase,
-  AddSelectionEtiqueta,
-} from './../../../core/ngrx/actions/action-types';
 
 @Component({
   selector: 'app-segment-button',
@@ -36,7 +32,7 @@ export class SegmentButtonComponent implements OnInit{
       .pipe(filter((e) => e instanceof NavigationEnd))
       .subscribe((e: NavigationEnd) => {
         const url = e.url;
-        if (url === '/tasks') {
+        if (url === '/home') {
           this.fase = 'home';
           this.slideChanged(`home`);
         } else if (url === `/tasks/create`) {
@@ -61,8 +57,6 @@ export class SegmentButtonComponent implements OnInit{
         this.slideChanged(`create`);
         break;
       default:
-        this.store.dispatch(AddSelectionEtiqueta('todos'));
-        this.store.dispatch(AddSelectionFase(e));
         this.slideChanged(e);
         this.navCtrl.navigateRoot(['/tasks/list']);
     }

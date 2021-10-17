@@ -5,9 +5,7 @@ import { Injectable } from "@angular/core";
 import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
 import { AlertController } from "@ionic/angular";
 import { Store } from "@ngrx/store";
-import { AddTasks } from "src/app/core/ngrx/actions/action-types";
 import { OverlayService } from "src/app/core/services/overlay.service";
-import { TasksService } from "src/app/pages/dashboard/tasks/services/tasks.service";
 import { Tasks } from "../model/tasks.model";
 
 @Injectable({
@@ -21,7 +19,6 @@ export class Notifications {
   constructor(
     public localNotifications: LocalNotifications,
     public alertController: AlertController,
-    private tasksService: TasksService,
     private overlayService: OverlayService,
     private store: Store<any>
   ){}
@@ -140,8 +137,6 @@ export class Notifications {
       data: date,
     };
     setTimeout(() => {
-      this.store.dispatch(AddTasks([taskToUpdate]));
-      this.tasksService.update(taskToUpdate);
     }, 400);
     await this.overlayService.toast({
       message: `Tarefa ${task.title} ${
